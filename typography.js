@@ -18,6 +18,11 @@ $documentContainer.innerHTML = `<custom-style>
     -webkit-font-smoothing: antialiased;
   };
 
+  --anypoint-title-font-common-base: {
+    font-family: "DIN Pro", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  };
+
   --anypoint-font-common-code: {
     font-family: "Source Code Pro", 'Consolas', 'Menlo', monospace;
     -webkit-font-smoothing: antialiased;
@@ -34,7 +39,7 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header1: {
-    @apply --anypoint-font-common-base;
+    @apply --anypoint-title-font-common-base;
     @apply --anypoint-font-common-nowrap;
     font-size: 30px;
     font-weight: 100;
@@ -43,7 +48,7 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header2: {
-    @apply --anypoint-font-common-base;
+    @apply --anypoint-title-font-common-base;
     @apply --anypoint-font-common-nowrap;
     font-size: 25px;
     font-weight: 100;
@@ -52,7 +57,7 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header3: {
-    @apply --anypoint-font-common-base;
+    @apply --anypoint-title-font-common-base;
     font-size: 20px;
     font-weight: 100;
     letter-spacing: -.25px;
@@ -60,7 +65,7 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header4: {
-    @apply --anypoint-font-common-base;
+    @apply --anypoint-title-font-common-base;
     font-size: 18px;
     font-weight: 100;
     letter-spacing: -.2px;
@@ -68,7 +73,7 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header5: {
-    @apply --anypoint-font-common-base;
+    @apply --anypoint-title-font-common-base;
     font-size: 16px;
     font-weight: 100;
     letter-spacing: -.2px;
@@ -76,7 +81,7 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header6: {
-    @apply --anypoint-font-common-base;
+    @apply --anypoint-title-font-common-base;
     @apply --anypoint-font-common-nowrap;
     font-size: 12px;
     font-weight: 700;
