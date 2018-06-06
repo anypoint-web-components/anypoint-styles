@@ -34,8 +34,8 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header1: {
-    @apply(--anypoint-font-common-base);
-    @apply(--anypoint-font-common-nowrap);
+    @apply --anypoint-font-common-base;
+    @apply --anypoint-font-common-nowrap;
     font-size: 30px;
     font-weight: 100;
     letter-spacing: -0.5px;
@@ -43,8 +43,8 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header2: {
-    @apply(--anypoint-font-common-base);
-    @apply(--anypoint-font-common-nowrap);
+    @apply --anypoint-font-common-base;
+    @apply --anypoint-font-common-nowrap;
     font-size: 25px;
     font-weight: 100;
     letter-spacing: -.3px;
@@ -52,7 +52,7 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header3: {
-    @apply(--anypoint-font-common-base);
+    @apply --anypoint-font-common-base;
     font-size: 20px;
     font-weight: 100;
     letter-spacing: -.25px;
@@ -60,7 +60,7 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header4: {
-    @apply(--anypoint-font-common-base);
+    @apply --anypoint-font-common-base;
     font-size: 18px;
     font-weight: 100;
     letter-spacing: -.2px;
@@ -68,7 +68,7 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header5: {
-    @apply(--anypoint-font-common-base);
+    @apply --anypoint-font-common-base;
     font-size: 16px;
     font-weight: 100;
     letter-spacing: -.2px;
@@ -76,8 +76,8 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-header6: {
-    @apply(--anypoint-font-common-base);
-    @apply(--anypoint-font-common-nowrap);
+    @apply --anypoint-font-common-base;
+    @apply --anypoint-font-common-nowrap;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0;
@@ -85,28 +85,28 @@ $documentContainer.innerHTML = `<custom-style>
   };
 
   --anypoint-font-body: {
-    @apply(--anypoint-font-common-base);
+    @apply --anypoint-font-common-base;
     font-size: 14px;
     letter-spacing: 0;
     font-weight: 400;
   };
 
   --anypoint-font-body-small: {
-    @apply(--anypoint-font-common-base);
+    @apply --anypoint-font-common-base;
     font-size: 14px;
     letter-spacing: 0;
     font-weight: 400;
   };
 
   --anypoint-font-blockquote: {
-    @apply(--anypoint-font-common-base);
+    @apply --anypoint-font-common-base;
     font-style: italic;
     font-weight: 200;
     font-size: 18px;
   };
 
   --anypoint-font-code: {
-    @apply(--anypoint-font-common-code);
+    @apply --anypoint-font-common-code;
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
