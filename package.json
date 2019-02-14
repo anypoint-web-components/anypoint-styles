@@ -12,10 +12,10 @@
   },
   "license": "(C) MuleSoft. All rights reserved.",
   "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.1.1",
-    "@polymer/iron-component-page": "^3.0.0-pre.18",
-    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "@polymer/gen-typescript-declarations": "^1.6.1",
+    "@polymer/iron-component-page": "^3.0.0-pre.21",
+    "@polymer/iron-demo-helpers": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.2.7"
   },
   "main": "anypoint-styles.js",
   "author": "Pawel Psztyc",
