@@ -1,50 +1,52 @@
-import '@polymer/polymer/lib/elements/custom-style.js';
+import { css } from 'lit-element';
 import './typography.js';
 import './colors.js';
 
-/**
-@license
-Copyright 2018 MuleSoft.
-All rights reserverd.
-*/
+const style = css`
+  html {
+    --primary-color: var(--anypoint-color-primary);
+    --secondary-color: var(--anypoint-color-secondary);
+    --primary-background-color: var(--anypoint-color-tertiary);
+    --accent-color: var(--anypoint-color-violet3);
 
-/*
-The anypoint default theme.
-*/
+    /* HTTP methods colors */
+    --method-display-selected-color: #fff;
+    --method-display-get-color: var(--anypoint-color-viridian3);
+    --method-display-post-color: var(--anypoint-color-violet3);
+    --method-display-put-color: var(--anypoint-color-yellow3);
+    --method-display-patch-color: var(--anypoint-color-indigo3);
+    --method-display-delete-color: var(--anypoint-color-red3);
+    --method-display-options-color: var(--anypoint-color-teal3);
+    --method-display-head-color: var(--anypoint-color-futureGreen3);
+    /* HTTP methods colors in method documentation panel */
+    --http-method-label-border-radius: 1px;
+    --http-method-label-get-background-color: var(--method-display-get-color);
+    --http-method-label-get-color: #fff;
+    --http-method-label-post-background-color: var(--method-display-post-color);
+    --http-method-label-post-color: #fff;
+    --http-method-label-put-background-color: var(--method-display-put-color);
+    --http-method-label-put-color: #fff;
+    --http-method-label-patch-background-color: var(--method-display-patch-color);
+    --http-method-label-patch-color: #fff;
+    --http-method-label-delete-background-color: var(--method-display-delete-color);
+    --http-method-label-delete-color: #fff;
+    --http-method-label-options-background-color: var(--method-display-options-color);
+    --http-method-label-options-color: #fff;
+    --http-method-label-head-background-color: var(--method-display-head-color);
+    --http-method-label-head-color: #fff;
+    --http-method-label-padding: 4px 5px;
+    --method-display-font-weigth: 100;
+  }
+`;
 
-const $documentContainer = document.createElement('template');
-$documentContainer.setAttribute('style', 'display: none;');
-
-$documentContainer.innerHTML = `<custom-style>
-<style is="custom-style">
-:root {
-  /* Commonly used properties in Polymer elements */
-  --primary-color: var(--anypoint-color-primary);
-  --secondary-color: var(--anypoint-color-secondary);
-  --primary-background-color: var(--anypoint-color-tertiary);
-  --accent-color: var(--anypoint-color-violet3);
-
-  /* HTTP methods colors */
-  --method-display-selected-color: #000;
-  --method-display-get-color: rgba(56, 142, 60, 1);
-  --method-display-post-color: var(--anypoint-color-violet3);
-  --method-display-put-color: var(--anypoint-color-navy3);
-  --method-display-patch-color: rgb(156, 39, 176);
-  --method-display-delete-color: rgb(244, 67, 54);
-
-  /* HTTP methods colors in method documentation panel */
-  --method-label-get-background-color: transparent;
-  --method-label-get-color: var(--method-display-get-color);
-  --method-label-post-background-color: transparent;
-  --method-label-post-color: var(--method-display-post-color);
-  --method-label-put-background-color: transparent;
-  --method-label-put-color: var(--method-display-put-color);
-  --method-label-patch-background-color: transparent;
-  --method-label-patch-color: var(--method-display-patch-color);
-  --method-label-delete-background-color: transparent;
-  --method-label-delete-color: var(--method-display-delete-color);
+try {
+  document.adoptedStyleSheets = document.adoptedStyleSheets.concat(style.styleSheet);
+} catch (_) {
+  /* istanbul ignore next */
+  {
+    const s = document.createElement('style');
+    s.type = 'text/css';
+    s.innerHTML = style.cssText;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  }
 }
-</style>
-</custom-style>`;
-
-document.head.appendChild($documentContainer.content);

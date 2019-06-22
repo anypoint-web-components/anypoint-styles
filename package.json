@@ -1,34 +1,56 @@
 {
-  "name": "@anypoint-components/anypoint-styles",
-  "version": "3.0.0-preview",
+  "name": "@anypoint-web-components/anypoint-styles",
+  "version": "1.0.0-preview.1",
   "description": "Anypoint styles definition for web components.",
+  "license": "Apache-2.0",
+  "main": "anypoint-styles.js",
   "keywords": [
     "anypoint",
     "styles"
   ],
+  "authors": [
+    "Pawel Psztyc",
+    "The Advanced REST client authors <arc@mulesoft.com>"
+  ],
+  "contributors": [
+    "Pawel Psztyc",
+    "The Advanced REST client authors <arc@mulesoft.com>"
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/mulesoft-labs/anypoint-styles.git"
-  },
-  "license": "(C) MuleSoft. All rights reserved.",
-  "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.1.1",
-    "@polymer/iron-component-page": "^3.0.0-pre.18",
-    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
-  },
-  "main": "anypoint-styles.js",
-  "author": "Pawel Psztyc",
-  "scripts": {
-    "test": "polymer test --plugin local",
-    "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
+    "url": "git://github.com/anypoint-web-components/anypoint-styles.git"
   },
   "bugs": {
     "url": "https://github.com/anypoint-components/anypoint-styles/issues",
     "email": "arc@mulesoft.com"
   },
+  "devDependencies": {
+    "@advanced-rest-client/arc-demo-helper": "^1.0.3",
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.0",
+    "@open-wc/eslint-config": "^0.4.1",
+    "@open-wc/prettier-config": "^0.1.0",
+    "husky": "^1.0.0",
+    "lint-staged": "^8.0.0",
+    "owc-dev-server": "^1.0.0"
+  },
+  "scripts": {
+    "start": "owc-dev-server --open demo",
+    "lint:eslint": "eslint --ext .js,.html .",
+    "format:eslint": "eslint --ext .js,.html . --fix",
+    "lint:prettier": "prettier \"*.js\" --list-different || (echo '↑↑ these files are not prettier formatted ↑↑' && exit 1)",
+    "format:prettier": "prettier \"**/*.js\" --write",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "format": "npm run format:eslint && npm run format:prettier"
+  },
   "dependencies": {
-    "@polymer/iron-flex-layout": "^3.0.0-pre.19",
     "@polymer/polymer": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }

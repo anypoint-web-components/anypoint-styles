@@ -4,19 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>anypoint-styles demo</title>
-  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-  <script type="module" src="../node_modules/@polymer/iron-flex-layout/iron-flex-layout.js"></script>
-  <script type="module" src="../node_modules/@polymer/polymer/lib/elements/custom-style.js"></script>
-  <script type="module" src="../colors.js"></script>
-  <script type="module" src="../typography.js"></script>
+  <script type="module" src="../node_modules/@advanced-rest-client/arc-demo-helper/arc-demo-helper.js"></script>
   <script type="module" src="../default-theme.js"></script>
 </head>
-<custom-style>
-  <style is="custom-style">
+<style>
   body {
-    font-size: 14px;
+    font-family: var(--font-family);
     max-width: 900px;
     padding-bottom: 120px;
+
+    font-size: var(--font-body-font-size);
+    letter-spacing: var(--font-body-letter-spacing);
+    font-weight: var(--font-body-font-weight);
   }
 
   .redlines {
@@ -29,43 +28,75 @@
   }
 
   .anypoint-font-header1 {
-    @apply --anypoint-font-header1;
+    font-family: var(--font-family-din);
+    font-size: var(--font-header1-font-size);
+    font-weight: var(--font-header1-font-weight);
+    letter-spacing: var(--font-header1-letter-spacing);
+    margin-bottom: var(--font-header1-margin-bottom);
   }
 
   .anypoint-font-header2 {
-    @apply --anypoint-font-header2;
+    font-family: var(--font-family-din);
+    font-size: var(--font-header2-font-size);
+    font-weight: var(--font-header2-font-weight);
+    letter-spacing: var(--font-header2-letter-spacing);
+    margin-bottom: var(--font-header2-margin-bottom);
   }
 
   .anypoint-font-header3 {
-    @apply --anypoint-font-header3;
+    font-family: var(--font-family-din);
+    font-size: var(--font-header3-font-size);
+    font-weight: var(--font-header3-font-weight);
+    letter-spacing: var(--font-header3-letter-spacing);
+    margin-bottom: var(--font-header3-margin-bottom);
   }
 
   .anypoint-font-header4 {
-    @apply --anypoint-font-header4;
+    font-family: var(--font-family-din);
+    font-size: var(--font-header4-font-size);
+    font-weight: var(--font-header4-font-weight);
+    letter-spacing: var(--font-header4-letter-spacing);
+    margin-bottom: var(--font-header4-margin-bottom);
   }
 
   .anypoint-font-header5 {
-    @apply --anypoint-font-header5;
+    font-family: var(--font-family-din);
+    font-size: var(--font-header5-font-size);
+    font-weight: var(--font-header5-font-weight);
+    letter-spacing: var(--font-header5-letter-spacing);
+    margin-bottom: var(--font-header5-margin-bottom);
   }
 
   .anypoint-font-header6 {
-    @apply --anypoint-font-header6;
+    font-family: var(--font-family-din);
+    font-size: var(--font-header6-font-size);
+    font-weight: var(--font-header6-font-weight);
+    letter-spacing: var(--font-header6-letter-spacing);
+    margin-bottom: var(--font-header6-margin-bottom);
   }
 
   .anypoint-font-body {
-    @apply --anypoint-font-body;
+    font-size: var(--font-body-font-size);
+    letter-spacing: var(--font-body-letter-spacing);
+    font-weight: var(--font-body-font-weight);
   }
 
   .anypoint-font-body-small {
-    @apply --anypoint-font-body-small;
+    font-size: var(--font-body-small-font-size);
+    letter-spacing: var(--font-body-small-letter-spacing);
+    font-weight: var(--font-body-small-font-weight);
   }
 
   .anypoint-font-blockquote {
-    @apply --anypoint-font-blockquote;
+    font-size: var(--font-blockquote-font-size);
+    font-weight: var(--font-blockquote-font-weight);
+    font-style: var(--font-blockquote-font-style);
   }
 
   .anypoint-font-code {
-    @apply --anypoint-font-code;
+    font-size: var(--font-code-font-size);
+    font-weight: var(--font-code-font-weight);
+    line-height: var(--font-code-line-height);
   }
 
   .toolbar {
@@ -73,7 +104,12 @@
     padding: 16px;
     background: var(--default-primary-color);
     color: var(--text-primary-color);
-    @apply --paper-font-display1;
+
+    font-family: var(--font-family-din);
+    font-size: var(--font-header1-font-size);
+    font-weight: var(--font-header1-font-weight);
+    letter-spacing: var(--font-header1-letter-spacing);
+    margin-bottom: var(--font-header1-margin-bottom);
   }
 
   .item,
@@ -87,17 +123,14 @@
 
   .item .primary {
     color: var(--primary-text-color);
-    @apply --paper-font-body2;
   }
 
   .item .secondary {
     color: var(--secondary-text-color);
-    @apply --paper-font-body1;
   }
 
   .disabled-item {
     color: var(--disabled-text-color);
-    @apply --paper-font-body2;
   }
 
   .color-primary {
@@ -249,8 +282,9 @@
   }
 
   #colors-output {
-    @apply --layout-wrap;
-    @apply --layout-horizontal;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .color-preview-box {
@@ -268,14 +302,13 @@
     display: block;
     text-align: center;
     color: var(--anypoint-color-steel5);
-    @apply --anypoint-font-body;
   }
-  </style>
-</custom-style>
-<body unresolved>
+</style>
+<body>
   <h1 class="anypoint-font-header1">anypoint-styles</h1>
+
   <section id="typography">
-    <h2 class="anypoint-font-header2">typography.html</h2>
+    <h2 class="anypoint-font-header2">typography.js</h2>
     <p class="anypoint-font-body">
       Grumpy wizards make toxic brew for the evil Queen and Jack.
     </p>
@@ -302,8 +335,9 @@
       </p>
     </section>
   </section>
+
   <section id="colors">
-    <h2 class="anypoint-font-header2">colors.html</h2>
+    <h2 class="anypoint-font-header2">colors.js</h2>
     <output id="colors-output"></output>
     <template id="colorTpl">
       <div class="color-preview-box">
@@ -315,135 +349,136 @@
       </div>
     </template>
   </section>
-  <script>
-let names = [{
-  'name': 'primary',
-  'color': '#00A2DF'
-}, {
-  'name': 'secondary',
-  'color': '#506773'
-}, {
-  'name': 'danger',
-  'color': '#D1344E'
-}, {
-  'name': 'success',
-  'color': '#17BC65'
-}, {
-  'name': 'tertiary',
-  'color': '#ffffff'
-}, {
-  'name': 'coreBlue3',
-  'color': '#00A2DF'
-}, {
-  'name': 'coreBlue1',
-  'color': '#ABE2F5'
-}, {
-  'name': 'coreBlue2',
-  'color': '#48C1ED'
-}, {
-  'name': 'coreBlue4',
-  'color': '#087299'
-}, {
-  'name': 'coreBlue5',
-  'color': '#114459'
-}, {
-  'name': 'robustBlue3',
-  'color': '#506773'
-}, {
-  'name': 'robustBlue1',
-  'color': '#A1B1B8'
-}, {
-  'name': 'robustBlue2',
-  'color': '#6B8A99'
-}, {
-  'name': 'robustBlue4',
-  'color': '#32444D'
-}, {
-  'name': 'robustBlue5',
-  'color': '#272F33'
-}, {
-  'name': 'futureGreen3',
-  'color': '#17BC65'
-}, {
-  'name': 'futureGreen1',
-  'color': '#AAF2CB'
-}, {
-  'name': 'futureGreen2',
-  'color': '#33CC7A'
-}, {
-  'name': 'futureGreen4',
-  'color': '#0E8C48'
-}, {
-  'name': 'futureGreen5',
-  'color': '#174D30'
-}, {
-  'name': 'aluminum1',
-  'color': '#F9FAFB'
-}, {
-  'name': 'aluminum2',
-  'color': '#F4F5F6'
-}, {
-  'name': 'aluminum3',
-  'color': '#E8E9EA'
-}, {
-  'name': 'aluminum4',
-  'color': '#CACBCC'
-}, {
-  'name': 'aluminum5',
-  'color': '#989A9B'
-}, {
-  'name': 'steel1',
-  'color': '#6B6C6D'
-}, {
-  'name': 'steel2',
-  'color': '#58595A'
-}, {
-  'name': 'steel3',
-  'color': '#3A3B3C'
-}, {
-  'name': 'steel4',
-  'color': '#262728'
-}, {
-  'name': 'steel5',
-  'color': '#121314'
-}, {
-  'name': 'yellow3',
-  'color': '#F2BE24'
-}, {
-  'name': 'viridian3',
-  'color': '#00B49D'
-}, {
-  'name': 'teal3',
-  'color': '#00B5D1'
-}, {
-  'name': 'navy3',
-  'color': '#178BEA'
-}, {
-  'name': 'indigo3',
-  'color': '#5E66F9'
-}, {
-  'name': 'violet3',
-  'color': '#9A63F9'
-}, {
-  'name': 'red3',
-  'color': '#D1344E'
-}];
 
-function createColors() {
-  const tpl = document.querySelector('#colorTpl');
-  const meta = tpl.content.querySelectorAll('.meta > span');
-  const preview = tpl.content.querySelector('.preview');
-  const container = document.getElementById('colors-output');
-  names.forEach((item) => {
-    meta[0].textContent = item.name;
-    meta[1].textContent = item.color;
-    preview.className = 'preview color-' + item.name;
-    const clone = document.importNode(tpl.content, true);
-    container.appendChild(clone);
-  });
-}
-createColors();
-</script>
+  <script>
+  const names = [{
+    'name': 'primary',
+    'color': '#00A2DF'
+  }, {
+    'name': 'secondary',
+    'color': '#506773'
+  }, {
+    'name': 'danger',
+    'color': '#D1344E'
+  }, {
+    'name': 'success',
+    'color': '#17BC65'
+  }, {
+    'name': 'tertiary',
+    'color': '#ffffff'
+  }, {
+    'name': 'coreBlue3',
+    'color': '#00A2DF'
+  }, {
+    'name': 'coreBlue1',
+    'color': '#ABE2F5'
+  }, {
+    'name': 'coreBlue2',
+    'color': '#48C1ED'
+  }, {
+    'name': 'coreBlue4',
+    'color': '#087299'
+  }, {
+    'name': 'coreBlue5',
+    'color': '#114459'
+  }, {
+    'name': 'robustBlue3',
+    'color': '#506773'
+  }, {
+    'name': 'robustBlue1',
+    'color': '#A1B1B8'
+  }, {
+    'name': 'robustBlue2',
+    'color': '#6B8A99'
+  }, {
+    'name': 'robustBlue4',
+    'color': '#32444D'
+  }, {
+    'name': 'robustBlue5',
+    'color': '#272F33'
+  }, {
+    'name': 'futureGreen3',
+    'color': '#17BC65'
+  }, {
+    'name': 'futureGreen1',
+    'color': '#AAF2CB'
+  }, {
+    'name': 'futureGreen2',
+    'color': '#33CC7A'
+  }, {
+    'name': 'futureGreen4',
+    'color': '#0E8C48'
+  }, {
+    'name': 'futureGreen5',
+    'color': '#174D30'
+  }, {
+    'name': 'aluminum1',
+    'color': '#F9FAFB'
+  }, {
+    'name': 'aluminum2',
+    'color': '#F4F5F6'
+  }, {
+    'name': 'aluminum3',
+    'color': '#E8E9EA'
+  }, {
+    'name': 'aluminum4',
+    'color': '#CACBCC'
+  }, {
+    'name': 'aluminum5',
+    'color': '#989A9B'
+  }, {
+    'name': 'steel1',
+    'color': '#6B6C6D'
+  }, {
+    'name': 'steel2',
+    'color': '#58595A'
+  }, {
+    'name': 'steel3',
+    'color': '#3A3B3C'
+  }, {
+    'name': 'steel4',
+    'color': '#262728'
+  }, {
+    'name': 'steel5',
+    'color': '#121314'
+  }, {
+    'name': 'yellow3',
+    'color': '#F2BE24'
+  }, {
+    'name': 'viridian3',
+    'color': '#00B49D'
+  }, {
+    'name': 'teal3',
+    'color': '#00B5D1'
+  }, {
+    'name': 'navy3',
+    'color': '#178BEA'
+  }, {
+    'name': 'indigo3',
+    'color': '#5E66F9'
+  }, {
+    'name': 'violet3',
+    'color': '#9A63F9'
+  }, {
+    'name': 'red3',
+    'color': '#D1344E'
+  }];
+
+  function createColors() {
+    const tpl = document.querySelector('#colorTpl');
+    const meta = tpl.content.querySelectorAll('.meta > span');
+    const preview = tpl.content.querySelector('.preview');
+    const container = document.getElementById('colors-output');
+    names.forEach((item) => {
+      meta[0].textContent = item.name;
+      meta[1].textContent = item.color;
+      preview.className = 'preview color-' + item.name;
+      const clone = document.importNode(tpl.content, true);
+      container.appendChild(clone);
+    });
+  }
+  createColors();
+  </script>
 </body>
 
 </html>
