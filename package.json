@@ -25,8 +25,8 @@
     "email": "arc@mulesoft.com"
   },
   "devDependencies": {
-    "@advanced-rest-client/arc-demo-helper": "^1.0.3",
-    "@commitlint/cli": "^7.0.0",
+    "@advanced-rest-client/arc-demo-helper": "^1.0.4",
+    "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^7.0.0",
     "@open-wc/eslint-config": "^0.4.1",
     "@open-wc/prettier-config": "^0.1.0",
@@ -44,7 +44,7 @@
     "format": "npm run format:eslint && npm run format:prettier"
   },
   "dependencies": {
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.3.0"
   },
   "lint-staged": {
     "*.js": [
