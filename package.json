@@ -1,6 +1,6 @@
 {
   "name": "@anypoint-web-components/anypoint-styles",
-  "version": "1.0.0-preview.1",
+  "version": "1.0.0-preview.2",
   "description": "Anypoint styles definition for web components.",
   "license": "Apache-2.0",
   "main": "anypoint-styles.js",
@@ -24,32 +24,36 @@
     "url": "https://github.com/anypoint-components/anypoint-styles/issues",
     "email": "arc@mulesoft.com"
   },
+  "dependencies": {
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2"
+  },
   "devDependencies": {
-    "@advanced-rest-client/arc-demo-helper": "^1.0.4",
+    "@advanced-rest-client/arc-demo-helper": "^1.0.14",
+    "@advanced-rest-client/eslint-config": "^1.1.1",
+    "@advanced-rest-client/prettier-config": "^0.1.0",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^7.0.0",
-    "@open-wc/eslint-config": "^0.4.1",
-    "@open-wc/prettier-config": "^0.1.0",
     "husky": "^1.0.0",
-    "lint-staged": "^8.0.0",
-    "owc-dev-server": "^1.0.0"
+    "karma": "^4.2.0",
+    "lint-staged": "^9.2.5",
+    "es-dev-server": "^1.17.1"
   },
   "scripts": {
-    "start": "owc-dev-server --open demo",
-    "lint:eslint": "eslint --ext .js,.html .",
-    "format:eslint": "eslint --ext .js,.html . --fix",
-    "lint:prettier": "prettier \"*.js\" --list-different || (echo '↑↑ these files are not prettier formatted ↑↑' && exit 1)",
-    "format:prettier": "prettier \"**/*.js\" --write",
+    "update-types": "gen-typescript-declarations --deleteExisting --outDir .",
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch",
+    "start:compatibility": "es-dev-server --app-index demo/index.html --compatibility all --node-resolve --open --watch",
+    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
+    "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
+    "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
     "lint": "npm run lint:eslint && npm run lint:prettier",
-    "format": "npm run format:eslint && npm run format:prettier"
-  },
-  "dependencies": {
-    "@polymer/polymer": "^3.3.0"
+    "format": "npm run format:eslint && npm run format:prettier",
+    "test": "exit 0"
   },
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "prettier --write",
       "git add"
     ]
   }
