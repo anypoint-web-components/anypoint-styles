@@ -1,6 +1,6 @@
 {
   "name": "@anypoint-web-components/anypoint-styles",
-  "version": "1.0.0-preview.2",
+  "version": "1.0.0",
   "description": "Anypoint styles definition for web components.",
   "license": "Apache-2.0",
   "main": "anypoint-styles.js",
