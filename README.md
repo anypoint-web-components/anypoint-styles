@@ -3,18 +3,20 @@
 The `<anypoint-styles>` component provides simple ways to use Anypoint CSS styles
 in an application. The following imports are available:
 
-1. [colors.js](https://github.com/anypoint-web-components/anypoint-styles/blob/master/colors.js):
+1.  [colors.js](https://github.com/anypoint-web-components/anypoint-styles/blob/master/colors.js):
 a complete list of the colors defined in the Anypoint [palette](http://ux.mulesoft.com/#/colors)
 
-2. [typography.js](https://github.com/anypoint-web-components/anypoint-styles/blob/master/typography.js):
+2.  [typography.js](https://github.com/anypoint-web-components/anypoint-styles/blob/master/typography.js):
 Anypoint [font](http://ux.mulesoft.com/#/typography) styles and sizes
 
-3. [anypoint-theme.js](https://github.com/anypoint-web-components/anypoint-styles/blob/master/anypoint-theme.js):
+3.  [anypoint-theme.js](https://github.com/anypoint-web-components/anypoint-styles/blob/master/anypoint-theme.js):
 Default theme for anypoint applications.
 
 We recommend importing each of these individual files, and using the style variables
 available in each ones, rather than the aggregated `anypoint-styles.js` as a whole.
 
+Note, typography does not include font definition (the `din-pro.js`) file.
+It assumes the for is already loaded into the web application. If not, additionally import the `din-pro.js` file.
 
 ## Usage
 
@@ -70,7 +72,7 @@ class SampleElement extends LitElement {
 customElements.define('sample-element', SampleElement);
 ```
 
-### Development
+## Development
 
 ```sh
 git clone https://github.com/anypoint-web-components/anypoint-styles

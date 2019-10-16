@@ -1,5 +1,4 @@
 import { css } from 'lit-element';
-import './din-pro.js';
 /*
 Anypoint typography.
 
