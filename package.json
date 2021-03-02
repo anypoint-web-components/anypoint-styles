@@ -25,36 +25,28 @@
     "email": "arc@mulesoft.com"
   },
   "dependencies": {
-    "lit-element": "^2.2.1",
-    "lit-html": "^1.1.2"
+    "lit-element": "^2.4.0",
+    "lit-html": "^1.3.0"
   },
   "devDependencies": {
-    "@advanced-rest-client/arc-demo-helper": "^1.0.15",
-    "@advanced-rest-client/eslint-config": "^1.1.3",
-    "@advanced-rest-client/prettier-config": "^0.1.0",
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "es-dev-server": "^1.18.4",
-    "husky": "^3.0.9",
-    "karma": "^4.2.0",
-    "lint-staged": "^9.4.2"
+    "@advanced-rest-client/arc-demo-helper": "^1.0.17",
+    "@open-wc/eslint-config": "^4.2.0",
+    "@web/dev-server": "^0.1.8",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0"
   },
   "scripts": {
-    "update-types": "gen-typescript-declarations --deleteExisting --outDir .",
-    "start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch",
-    "start:compatibility": "es-dev-server --app-index demo/index.html --compatibility all --node-resolve --open --watch",
-    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
-    "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
-    "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
-    "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "format": "npm run format:eslint && npm run format:prettier",
+    "start": "web-dev-server --app-index demo/index.html --node-resolve --open --watch --root-dir .",
     "test": "exit 0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   }
 }
