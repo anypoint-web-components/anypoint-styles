@@ -1,6 +1,6 @@
 {
   "name": "@anypoint-web-components/anypoint-styles",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Anypoint styles definition for web components.",
   "license": "Apache-2.0",
   "main": "anypoint-styles.js",
@@ -29,9 +29,9 @@
   "devDependencies": {
     "@advanced-rest-client/arc-demo-helper": "^1.0.17",
     "@open-wc/eslint-config": "^4.3.0",
-    "@web/dev-server": "^0.1.22",
-    "husky": "^7.0.1",
-    "lint-staged": "^11.1.2"
+    "@web/dev-server": "^0.1.25",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3"
   },
   "scripts": {
     "start": "web-dev-server --app-index demo/index.html --node-resolve --open --watch --root-dir .",

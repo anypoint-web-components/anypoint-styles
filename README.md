@@ -1,4 +1,8 @@
-# anypoint-styles
+# Deprecated
+
+This component has been moved to `anypoint-web-components/awc`.
+
+====
 
 The `<anypoint-styles>` component provides simple ways to use Anypoint CSS styles
 in an application. The following imports are available:
