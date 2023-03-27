@@ -5,15 +5,15 @@ Anypoint typography.
 This CSS variables has to be applied to the corresponding elements in Anypoint
 Web Components.
 
-This may not be a convinient way of applying styles but at the moment of making it
-there's nmo other way. There's promising `::parts` and `::theme` spec proposal
-but it is only implemented in Chrome and it is not sure whether the spec will be adopted.
+This may not be a convenient way of applying styles but at the moment of making it
+there's nmo other way. There's promising `::parts` and `::theme` spec proposal,
+but it is only implemented in Chrome, and it is not sure whether the spec will be adopted.
 */
 const style = css`
   html {
-    --font-family: 'Open Sans', 'DIN Pro', sans-serif;
-    --font-family-din: 'DIN Pro', sans-serif;
-    --font-code-family: 'Source Code Pro', 'Consolas', 'Menlo', monospace;
+    --font-family: sans-serif;
+    --font-family-din: sans-serif;
+    --font-code-family: 'Consolas', 'Menlo', monospace;
     /* Header 1 */
     --font-header1-font-size: 30px;
     --font-header1-font-weight: 100;
